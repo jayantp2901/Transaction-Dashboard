@@ -1,0 +1,259 @@
+/* Overall Dashboard Layout */
+.dashboard {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fc;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Search Form and Filters */
+/* Styling for the form container */
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  flex-wrap: wrap;
+}
+
+/* Styling for the input and select container */
+.btns {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Styling for the search input field */
+.search {
+  flex: 1;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+/* Styling for the select dropdown */
+select {
+  padding: 12px 15px;
+  font-size: 16px;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+select:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+/* Dropdown arrow styling */
+select::-ms-expand {
+  display: none; /* Hide the default dropdown arrow in IE */
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+/* Placeholder text styling */
+.search::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .search-form {
+    padding: 15px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search, select {
+    width: 100%;
+  }
+}
+
+
+/* Transaction Table */
+.transaction-table {
+  width: 100%; 
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;
+  overflow: hidden; 
+  margin-top: 20px;
+  background-color: #ffffff;
+}
+
+.transaction-table th {
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: left;
+  padding: 12px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-table tr {
+  transition: background-color 0.3s ease;
+}
+
+.transaction-table td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.transaction-table tr:hover {
+  background-color: #f4f4f4;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.transaction-table td:first-child {
+  font-weight: bold;
+  color: #2d3e50;
+}
+
+@media (max-width: 768px) {
+  .transaction-table {
+    font-size: 12px;
+  }
+
+  .transaction-table th, .transaction-table td {
+    padding: 8px 10px;
+  }
+}
+
+.transaction-table {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.transaction-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #4CAF50;
+}
+
+.transaction-table tr:last-child {
+  border-bottom: 2px solid #4CAF50;
+}
+
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+}
+
+
+/* Pagination */
+.pagination-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-btns button {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination-btns button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination-btns span {
+  font-size: 1.2rem;
+}
+
+/* Chart Container */
+.charts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.pie-chart, .bar-chart {
+  width: 40%;
+}
+
+.pie-chart h2, .bar-chart h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .charts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pie-chart, .bar-chart {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .pagination-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+img{
+  height: 80px;
+  width: 80px;
+}
